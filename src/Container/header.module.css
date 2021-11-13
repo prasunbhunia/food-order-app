@@ -1,0 +1,30 @@
+.header {
+    width: 100%;
+    height: 4rem;
+    background-color: grey;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.main-image {
+    width: 100%;
+    height: 80%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.main-image img {
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.main-image .heading{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
