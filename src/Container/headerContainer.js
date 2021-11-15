@@ -4,12 +4,12 @@ import { ReactComponent as CartSvg } from "../assets/cart.svg";
 
 import styles from "./header.module.css";
 
-function HeaderContainer() {
+function HeaderContainer(props) {
     return (
         <>
             <header className={styles.header}>
                 <h1>React Meals</h1>
-                <CustomButton isCart={false}>
+                <CustomButton isCart='false' onClick={props.onShowCart}>
                     <div className='cart-svg' to="/">
                         <CartSvg />
                     </div>

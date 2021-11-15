@@ -2,9 +2,9 @@ import React from "react";
 
 import "./custom-button.css";
 
-function CustomButton({ children, isCart }) {
+function CustomButton(props) {
     return (
-        <button className={`button ${isCart ? 'is-cart': ''}`}>{children}</button>
+        <button className={`button ${props.isCart ? 'is-cart': ''}`} onClick={props.onClick} >{props.children}</button>
     );
 }
 
