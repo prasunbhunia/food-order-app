@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import CustomButton from "../components/Layout/Button/custom-button";
 import { ReactComponent as CartSvg } from "../assets/cart.svg";
-
+import CartContext from "../store/cart-context";
 import styles from "./header.module.css";
 
 function HeaderContainer(props) {
+    const ctx = useContext(CartContext);
+    const numberOfCartItems = ctx.items.reduce((curNumber , item) => {
+        return curNumber + item.amount
+    }, 0)
+    
     return (
         <>
             <header className={styles.header}>
@@ -13,7 +18,7 @@ function HeaderContainer(props) {
                     <div className='cart-svg' to="/">
                         <CartSvg />
                     </div>
-                    Your Cart 3
+                    Your Cart {numberOfCartItems}
                 </CustomButton>
             </header>
             <div className={styles["main-image"]}>
